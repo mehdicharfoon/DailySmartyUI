@@ -11,6 +11,7 @@ class RecentPosts extends Component {
             if(index < 3) {
                 return (
                     <Post {...post} key={index}/>
+                    <Post type="recent" {...post} key={index}/>
                 )   
             }
         })
@@ -25,7 +26,6 @@ class RecentPosts extends Component {
                         {this.renderPosts()}
                     </ul>
                 </div>
-
             </div>
         )
     }
