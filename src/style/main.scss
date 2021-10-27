@@ -1,6 +1,4 @@
-.post-topic {
-    margin: 0 4px;
-}
+
 body {
     font-family: 'Lato', sans-serif;
 }
@@ -8,12 +6,12 @@ body {
     display: grid;
     justify-content: center;
 }
+
 .home {
     height: 100vh;
     width: 66vw;
     display: grid;
     align-content: space-around;
-    justify-items: stretch;
     // justify-items: stretch;
     // grid-template-rows: 1fr 2fr 1fr;
 }
@@ -24,17 +22,22 @@ body {
     display: grid;
     justify-items: center;
 }
-
 ul {
     margin: 0;
     padding: 0;
     list-style-type: none;
 }
 
+
+
 $color-gray-one: #666666;
 $color-gray-two: #B3B3B3;
 $color-blue-one: #0079FF;
 
-@import './searchBar'; 
+@import './mixins';
 @import './searchBar';
 @import './recentPosts';
+@import './post'; 
+@import './post';
+@import './home';
+@import './results';
