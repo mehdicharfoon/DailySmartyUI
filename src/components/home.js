@@ -10,22 +10,15 @@ class Home extends Component {
         this.props.history.push('/results');
       });
   }
-
   render() {
     return (
-      <div>
-        <div>
-          <Logo/>
-          <SearchBar onSubmit={(query) => this.handleSearchBarSubmit(query)}/>
-          <RecentPosts/>
-        </div>
       <div className="home">
         <Logo/>
         <SearchBar onSubmit={(query) => this.handleSearchBarSubmit(query)}/>
+        <SearchBar page="home" onSubmit={(query) => this.handleSearchBarSubmit(query)}/>
         <RecentPosts/>
       </div>
-      </div>
     );
-  
+  }
 }
 export default connect(null, actions)(Home);
