@@ -1,22 +1,56 @@
-import React, { Component } from 'react';
-import Logo from './logo';
-import SearchBar from './searchBar';
-import ResultsPosts from './resultsPosts';
-import { connect } from 'react-redux';
-import * as actions from '../actions';
-class Results extends Component {
-    handleSearchBarSubmit(query) {
-        this.props.fetchPostsWithQuery(query);
-    }
-    render() {
-        return (
-            <div className="results">
-                <Logo size={55}/>
-                <SearchBar onSubmit={(query) => this.handleSearchBarSubmit(query)}/>
-                <SearchBar page="results" onSubmit={(query) => this.handleSearchBarSubmit(query)}/>
-                <ResultsPosts/>
-            </div>
-        )
+.results {
+    // @include default-page-layout();
+    height: 100vh;
+    width: 66vw;
+    display: grid;
+    margin-top: 52px;
+    grid-row-gap: 44px;
+}
+.results-posts {
+    display: grid;
+    grid-row-gap: 21px;
+    .results-posts__wrapper {
+        .results-posts__posts {
+            display: grid;
+            grid-row-gap: 20px;
+            justify-content: stretch;
+        }
     }
 }
-export default connect(null, actions)(Results);
+.result-post {
+    display: grid;
+    align-content: space-around;
+    grid-row-gap: 22px;
+    .result-post__topics > * {
+        color: $color-blue-one;
+        font-size: 14px;
+        line-height: 17px;
+        font-weight: normal;
+    }
+    .result-post__title a {
+        color: $color-gray-one;
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    .result-post__links {
+        // display: flex;
+    }
+}
+
+.post-link {
+    min-height: 70px;
+    display: flex;
+
+    .post-link__box {
+        min-width: 70px;
+        background-color: $color-gray-three;
+        margin-right: 16px;
+    }
+
+    .post-link__link a {
+        color: $color-gray-one;
+        font-size: 14px;
+        line-height: 17px;
+    }
+}
